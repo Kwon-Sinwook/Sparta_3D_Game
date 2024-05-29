@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 1268518488165936007}
   - component: {fileID: 816427183771394932}
   - component: {fileID: 5961690893106009339}
+  - component: {fileID: 3743628797503916777}
   m_Layer: 7
   m_Name: Item_Flower
   m_TagString: Untagged
@@ -154,6 +155,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: d10ed5da4dd9d0b40b3f91a5f7b76f32, type: 2}
+--- !u!65 &3743628797503916777
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2488218438824259282}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.23594265, y: 0.3789732, z: 0.24944484}
+  m_Center: {x: -0.012961726, y: 0.17921066, z: -0.015082101}
 --- !u!1 &7492889862503770409
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,8 +187,6 @@ GameObject:
   - component: {fileID: 7489498432245253826}
   - component: {fileID: 1735165167680522572}
   - component: {fileID: 3599521263897884078}
-  - component: {fileID: 355170362148735144}
-  - component: {fileID: 6261190623634391550}
   m_Layer: 7
   m_Name: Flowers_01_LOD0
   m_TagString: Untagged
@@ -239,37 +259,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &355170362148735144
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7492889862503770409}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.2, y: 0.3828378, z: 0.2}
-  m_Center: {x: 0, y: 0.1818975, z: 0}
---- !u!114 &6261190623634391550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7492889862503770409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c0782910327e464586a1be0b58c436e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: d10ed5da4dd9d0b40b3f91a5f7b76f32, type: 2}

@@ -7,6 +7,10 @@ using UnityEngine.InputSystem;
 public class Interaction : MonoBehaviour
 {
 
+    public GameObject saveGameObject;
+    public bool flag = false;
+    public bool onInvoke = false;
+
     public float checkRate = 0.05f;
     private float lastCheckTime;
     public float maxCheckDistance;
@@ -44,6 +48,16 @@ public class Interaction : MonoBehaviour
                 promptText.gameObject.SetActive(false);
             }
         }
+
+        if (flag)
+        {
+            if (onInvoke)
+            {   
+                onInvoke = false;
+                Invoke("ReActive", 2f);
+            }
+        }
+
     }
 
     private void SetPromptText()
@@ -57,11 +71,23 @@ public class Interaction : MonoBehaviour
         if (context.phase == InputActionPhase.Started && curInteractable != null)
         {
             curInteractable.OnInteract();
+
+            saveGameObject = curGameObject;
+            curGameObject.SetActive(false);
+
+            flag = true;
+            onInvoke = true;
+
             curGameObject = null;
             curInteractable = null;
             promptText.gameObject.SetActive(false);
         }
     }
 
+    public void ReActive()
+    {
+        saveGameObject.SetActive(true);
+        flag = false;
+    }
 
 }

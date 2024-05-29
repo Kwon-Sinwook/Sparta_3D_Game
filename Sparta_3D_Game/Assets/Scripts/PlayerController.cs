@@ -112,6 +112,11 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
+    public void JumpPad(float JumpPower)
+    {
+        rigidbody.velocity = Vector3.up * JumpPower;
+    }
+
     public void ToggleCursor(bool toggle)
     {
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;

@@ -7,4 +7,11 @@ public class ItemData : ScriptableObject
 {
     public string ItemName;
     public string ItemDescription;
+    public float value;
+
+
+    public void AA()
+    {
+        Debug.Log("이거 어케 댐");
+    }
 }

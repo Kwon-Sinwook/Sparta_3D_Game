@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1268518488165936007}
   - component: {fileID: 816427183771394932}
+  - component: {fileID: 5961690893106009339}
   m_Layer: 7
   m_Name: Item_Flower
   m_TagString: Untagged
@@ -140,6 +141,19 @@ LODGroup:
     renderers:
     - renderer: {fileID: 7248959694074036930}
   m_Enabled: 1
+--- !u!114 &5961690893106009339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2488218438824259282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c0782910327e464586a1be0b58c436e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: d10ed5da4dd9d0b40b3f91a5f7b76f32, type: 2}
 --- !u!1 &7492889862503770409
 GameObject:
   m_ObjectHideFlags: 0

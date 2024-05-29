@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Interaction : MonoBehaviour
 {
@@ -33,9 +34,6 @@ public class Interaction : MonoBehaviour
                 {
                     curGameObject = hit.collider.gameObject;
                     curInteractable = hit.collider.GetComponent<IInteractable>();
-
-                    Debug.Log(hit.collider.gameObject.name);
-
                     SetPromptText();
                 }
             }
@@ -53,5 +51,17 @@ public class Interaction : MonoBehaviour
         promptText.gameObject.SetActive(true);
         promptText.text = curInteractable.GetInteractable();
     }
+
+    public void OnInteractInput(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started && curInteractable != null)
+        {
+            curInteractable.OnInteract();
+            curGameObject = null;
+            curInteractable = null;
+            promptText.gameObject.SetActive(false);
+        }
+    }
+
 
 }

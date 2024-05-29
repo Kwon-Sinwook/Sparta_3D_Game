@@ -21,6 +21,22 @@ public class ItemObject : MonoBehaviour, IInteractable
 
     public void OnInteract()
     {
-        
+        if (data.ItemName == "Mushroom")
+            UseMushroom();
+
+        else UseFlower();
+
+        Destroy(gameObject);
     }
+
+    private void UseMushroom()
+    {
+        PlayerManager.Instance.Player.controller.jumpForce = data.value;
+    }
+
+    private void UseFlower()
+    {
+        PlayerManager.Instance.Player.controller.moveSpeed = data.value;
+    }
+
 }

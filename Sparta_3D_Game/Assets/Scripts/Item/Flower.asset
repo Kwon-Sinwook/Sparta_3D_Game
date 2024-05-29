@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec9ceda37587f4d4ebfcefb044cbd0dc, type: 3}
-  m_Name: Mushroom
+  m_Name: Flower
   m_EditorClassIdentifier: 
-  ItemName: 
-  ItemDescription: 
+  ItemName: "\uC774\uC18D\uAF43"
+  ItemDescription: "\uBA39\uC73C\uBA74 \uBE68\uB77C\uC9C8\uB4EF\uD558\uB2E4."

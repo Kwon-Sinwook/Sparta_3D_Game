@@ -8,7 +8,6 @@ public class JumpPad : MonoBehaviour
     {
         if (other.CompareTag("Player")) 
         {
-            Debug.Log("гого");
             PlayerManager.Instance.Player.controller.JumpPad(15);
         }
     }

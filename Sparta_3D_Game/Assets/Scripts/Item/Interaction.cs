@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class Interaction : MonoBehaviour
 {
+    public GameObject testObject;
+    public Image itemTime;
+    public float tmp;
+
 
     public GameObject saveGameObject;
     public bool flag = false;
@@ -53,11 +58,13 @@ public class Interaction : MonoBehaviour
         {
             if (onInvoke)
             {   
+                testObject.SetActive(true);
                 onInvoke = false;
                 Invoke("ReActive", 3.5f);
             }
+            tmp -= 28.5f * Time.deltaTime;
+            itemTime.fillAmount = tmp / 100f; 
         }
-
     }
 
     private void SetPromptText()
@@ -86,6 +93,8 @@ public class Interaction : MonoBehaviour
 
     public void ReActive()
     {
+        testObject.SetActive(false);
+        tmp = 100f;
         saveGameObject.SetActive(true);
         flag = false;
     }

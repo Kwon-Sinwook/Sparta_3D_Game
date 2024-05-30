@@ -19,12 +19,14 @@ public class PlayerController : MonoBehaviour
     public float lookSensitivity;
 
     private Vector2 mouseDelta;
+    private Vector3 beforeDir;
 
     [HideInInspector]
     public bool canLook = true;
 
     private Rigidbody rigidbody;
 
+    private Vector3 padVecter = Vector3.zero;
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -78,8 +80,17 @@ public class PlayerController : MonoBehaviour
         Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
         dir *= moveSpeed;
         dir.y = rigidbody.velocity.y;
+        
+        if(padVecter != Vector3.zero)
+        {
+            rigidbody.velocity = padVecter + dir;
+            return;
+        }
 
         rigidbody.velocity = dir;
+
+        //이동 발판 위면
+        //이동 발판 벡터 그대로 가져옴
     }
 
     void CameraLook()
@@ -122,4 +133,21 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         canLook = !toggle;
     }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("MovingPad"))
+        {
+            padVecter = collision.gameObject.GetComponent<MovingPad>().GetVec();
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("MovingPad"))
+        {
+            padVecter = Vector3.zero;
+        }
+    }
+
 }

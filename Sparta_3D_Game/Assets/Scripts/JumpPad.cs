@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class JumpPad : MonoBehaviour
 {
+    public float jumpPower;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")) 
         {
-            PlayerManager.Instance.Player.controller.JumpPad(15);
+            PlayerManager.Instance.Player.controller.JumpPad(jumpPower);
         }
     }
 }

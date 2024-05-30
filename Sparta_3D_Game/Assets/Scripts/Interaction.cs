@@ -54,7 +54,7 @@ public class Interaction : MonoBehaviour
             if (onInvoke)
             {   
                 onInvoke = false;
-                Invoke("ReActive", 2f);
+                Invoke("ReActive", 3.5f);
             }
         }
 
